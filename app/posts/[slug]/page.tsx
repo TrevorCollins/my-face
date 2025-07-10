@@ -14,8 +14,12 @@ export const generateStaticParams = async () => {
   return slugs
 }
 
-export default async function Post({ params }: { params: { slug: string } }) {
-  const { slug } = params
+export default async function Post({
+  params
+}: {
+  params: Promise<{ slug: string }>
+}) {
+  const { slug } = await params
   const post = await getFileBySlug(slug, 'posts')
   if (!post) {
     notFound()

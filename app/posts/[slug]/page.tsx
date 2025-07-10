@@ -12,8 +12,8 @@ export const generateStaticParams = async () => {
   return posts.map(post => ({ slug: post.slug }))
 }
 
-const Post = async ({ params }: { params: { slug: string } }) => {
-  const { slug } = await params
+export default async function Post({ params }: { params: { slug: string } }) {
+  const { slug } = params
   const post = await getFileBySlug(slug, 'posts')
   if (!post) {
     notFound()
@@ -61,5 +61,3 @@ const Post = async ({ params }: { params: { slug: string } }) => {
     </section>
   )
 }
-
-export default Post

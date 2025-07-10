@@ -9,7 +9,9 @@ import MDXContent from '@/components/MDXContent'
 
 export const generateStaticParams = async () => {
   const posts = await getFiles('posts')
-  return posts.map(post => ({ slug: post.slug }))
+  const slugs = posts.map(post => ({ slug: post.slug }))
+
+  return slugs
 }
 
 export default async function Post({ params }: { params: { slug: string } }) {

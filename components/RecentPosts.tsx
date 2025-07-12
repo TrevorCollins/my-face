@@ -6,16 +6,16 @@ export default async function RecentPosts() {
   const posts = await getFiles('posts', 4)
 
   return (
-    <section className='pb-24'>
+    <section className='my-6'>
       <div>
-        <h2 className='title mb-12'>Recent posts</h2>
+        <h2 className='title text-sm'>Trevor's Latest Blog Entries</h2>
         <Posts posts={posts} />
 
         <Link
           href='/posts'
-          className='text-muted-foreground hover:text-foreground mt-8 inline-flex items-center gap-2 underline decoration-1 underline-offset-2 transition-colors'
+          className='text-dark-blue hover:text-blue inline-flex text-xs font-bold transition-colors'
         >
-          <span>All posts</span>
+          <span>[View All Blog Entries]</span>
         </Link>
       </div>
     </section>

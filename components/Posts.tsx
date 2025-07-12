@@ -5,25 +5,21 @@ import { formatDate } from '@/lib/utils'
 
 export default function Posts({ posts }: { posts: FileMetadata[] }) {
   return (
-    <ul className='flex flex-col gap-8'>
+    <ul className='my-4 flex flex-col gap-2'>
       {posts.map(post => (
-        <li key={post.slug}>
+        <li
+          key={post.slug}
+          className='flex flex-col justify-between gap-x-4 gap-y-1 sm:flex-row'
+        >
+          <div className='max-w-lg'>
+            <p className='text-xs font-semibold'>{post.title}</p>
+            <p className='mt-1 line-clamp-1 text-xs'>{post.summary}</p>
+          </div>
           <Link
             href={`/posts/${post.slug}`}
-            className='flex flex-col justify-between gap-x-4 gap-y-1 sm:flex-row'
+            className='text-dark-blue text-xxs font-semibold text-nowrap'
           >
-            <div className='max-w-lg'>
-              <p className='text-lg font-semibold'>{post.title}</p>
-              <p className='text-muted-foreground mt-1 line-clamp-2 text-sm font-light'>
-                {post.summary}
-              </p>
-            </div>
-
-            {post.publishedAt && (
-              <p className='mt-1 text-sm font-light'>
-                {formatDate(post.publishedAt)}
-              </p>
-            )}
+            (view more)
           </Link>
         </li>
       ))}

@@ -3,15 +3,20 @@ import ThemeToggle from '@/components/ui/themeToggle'
 
 export default function Header() {
   return (
-    <header className='bg-background/75 fixed inset-x-0 top-0 z-50 py-6 backdrop-blur-sm'>
-      <nav className='container flex max-w-3xl items-center justify-between'>
+    <header className='fixed inset-x-0 top-0 z-50 mx-auto flex max-w-4xl flex-col'>
+      <nav className='bg-primary text-primary-foreground container flex max-h-[50px] items-center justify-between px-4 py-1'>
         <div>
-          <Link href='/' className='text-2xl font-bold'>
-            TC
-          </Link>
+          <Link href='/'>MyFace.com | Home</Link>
         </div>
-
-        <ul className='text-muted-foreground flex items-center gap-6 text-sm font-light sm:gap-10'>
+        <div>
+          <ThemeToggle />
+        </div>
+      </nav>
+      <nav className='bg-secondary text-secondary-foreground container flex items-center justify-between px-4 py-2'>
+        <ul className='mx-auto flex items-center text-xs *:border-black *:px-1 *:not-last:border-r-1 sm:*:px-2'>
+          <li className='hover:text-foreground transition-colors'>
+            <Link href='/temps'>temps</Link>
+          </li>
           <li className='hover:text-foreground transition-colors'>
             <Link href='/posts'>Posts</Link>
           </li>
@@ -22,10 +27,6 @@ export default function Header() {
             <Link href='/contact'>Contact</Link>
           </li>
         </ul>
-
-        <div>
-          <ThemeToggle />
-        </div>
       </nav>
     </header>
   )

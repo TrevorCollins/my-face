@@ -22,11 +22,12 @@ const ThemeToggle = () => {
       size='sm'
       variant='ghost'
       onClick={() => setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')}
+      className='p-1 text-white'
     >
       {resolvedTheme === 'dark' ? (
-        <SunIcon className='size-4 text-orange-300'>Light Mode</SunIcon>
+        <SunIcon className='size-4 stroke-3'>Light Mode</SunIcon>
       ) : (
-        <MoonIcon className='size-4 text-sky-950'>Dark Mode</MoonIcon>
+        <MoonIcon className='size-4 stroke-3'>Dark Mode</MoonIcon>
       )}
     </Button>
   )

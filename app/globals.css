@@ -2,13 +2,14 @@
 @import 'tw-animate-css';
 @plugin "@tailwindcss/typography";
 
-@custom-variant dark (&:is(.dark *));
+@custom-variant dark (&:where(.dark, .dark *));
 
 @theme inline {
+  --font-ms: var(--font-nunito-sans);
+  --font-sans: 'verdana', 'arial', sans-serif;
+  --text-xxs: calc(var(--spacing) * 2.75);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -42,6 +43,15 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
+
+  --color-white: oklch(1 0 0);
+  --color-black: oklch(0 0 0);
+  --color-dark-blue: oklch(0.371 0.173 262.1);
+  --color-blue: oklch(0.499 0.099 250.4);
+  --color-light-blue: oklch(0.848 0.055 247.6);
+  --color-lighter-blue: oklch(0.923 0.033 248.2);
+  --color-orange: oklch(69.58% 0.20410842945213054 43.38724987327339);
+  --color-light-orange: oklch(0.898 0.06 65.3);
 }
 
 :root {
@@ -52,14 +62,18 @@
   --card-foreground: oklch(0.129 0.042 264.695);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.129 0.042 264.695);
-  --primary: oklch(0.208 0.042 265.755);
-  --primary-foreground: oklch(0.984 0.003 247.858);
-  --secondary: oklch(0.968 0.007 247.896);
-  --secondary-foreground: oklch(0.208 0.042 265.755);
-  --muted: oklch(0.968 0.007 247.896);
-  --muted-foreground: oklch(0.554 0.046 257.417);
-  --accent: oklch(0.968 0.007 247.896);
-  --accent-foreground: oklch(0.208 0.042 265.755);
+  --primary: oklch(0.3708 0.1731 262.12);
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.6671 0.0926 248.9);
+  --secondary-foreground: oklch(1 0 0);
+  --muted: oklch(0.8455 0.0559 249.32);
+  --muted-foreground: var(--secondary);
+  --muted-secondary: oklch(0.9227 0.0329 248.18);
+  --muted-secondary-foreground: oklch(0 0 0);
+  --accent: oklch(0.7737 0.1629 60.28);
+  --accent-foreground: oklch(0.3708 0.1731 262.12);
+  --muted-accent: oklch(0.898 0.0603 65.31);
+  --muted-accent-foreground: oklch(0 0 0);
   --destructive: oklch(0.577 0.245 27.325);
   --border: oklch(0.929 0.013 255.508);
   --input: oklch(0.929 0.013 255.508);
@@ -137,7 +151,7 @@
   }
 
   .title {
-    @apply decoration-border/75 text-3xl font-bold underline decoration-2 underline-offset-8;
+    @apply text-lg font-bold;
   }
 
   .prose pre {
@@ -155,19 +169,71 @@
   .prose code span {
     @apply font-medium;
   }
-}
 
-@layer components {
-  .card {
-    border-radius: var(--rounded-lg);
-    border: 3px solid var(--color-border);
-    padding: var(--spacing-6);
-    margin: var(--spacing-4);
-    box-shadow: var(--shadow-xl);
+  .container {
+    margin-inline: auto;
+    padding: 1rem;
   }
-}
 
-@utility container {
-  margin-inline: auto;
-  padding: 2rem;
+  .bio-box {
+    border: 2px solid var(--color-secondary);
+    h2 {
+      color: var(--color-secondary-foreground);
+      background-color: var(--color-secondary);
+      padding: 0 0 0.125rem 0.5rem;
+      font-size: calc(var(--spacing) * 3);
+      font-weight: 900;
+    }
+    .body {
+      font-size: calc(var(--spacing) * 2.625);
+      line-height: calc(var(--spacing) * 3);
+    }
+    .contact-links {
+      padding: 0.5rem;
+      columns: 2;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      grid-template-rows: auto;
+      margin: 0.125rem;
+      gap: 0.15rem;
+      width: calc(100% - 0.25rem);
+      p {
+        padding: 0.25rem;
+      }
+      p:nth-child(odd) {
+        background-color: var(--color-light-blue);
+        color: var(--color-blue);
+        font-weight: 600;
+      }
+      p:nth-child(even) {
+        background-color: var(--color-lighter-blue);
+        color: var(--color-black);
+      }
+    }
+  }
+
+  .social-box {
+    h2 {
+      width: 100%;
+      color: var(--color-orange);
+      background-color: var(--color-light-orange);
+      padding: 0 0 0.125rem 0.5rem;
+      font-size: calc(var(--spacing) * 3);
+      font-weight: 900;
+    }
+    .body {
+      font-size: calc(var(--spacing) * 2.75);
+      line-height: calc(var(--spacing) * 3);
+      padding: 0.25rem;
+    }
+    .sub-title {
+      color: var(--color-orange);
+      font-size: calc(var(--spacing) * 3);
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+    }
+  }
 }

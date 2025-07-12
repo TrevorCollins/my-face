@@ -1,7 +1,5 @@
 import type { Metadata } from 'next'
 import { Nunito } from 'next/font/google'
-import Providers from '@/components/Providers'
-import './globals.css'
 import Footer from '@/components/footer'
 import Header from '@/components/Header'
 import { cn } from '@/lib/utils'
@@ -25,15 +23,13 @@ export default function RootLayout({
     <html lang='en' suppressHydrationWarning>
       <body
         className={cn(
-          'flex min-h-screen flex-col font-sans text-sm antialiased',
+          'font-ms flex min-h-screen flex-col antialiased',
           nunito.variable
         )}
       >
-        <Providers>
-          <Header />
-          <main className='grow'>{children}</main>
-          <Footer />
-        </Providers>
+        <Header />
+        <main className='grow'>{children}</main>
+        <Footer />
       </body>
     </html>
   )

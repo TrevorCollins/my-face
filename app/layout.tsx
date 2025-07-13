@@ -2,9 +2,9 @@ import type { Metadata } from 'next'
 import { Nunito } from 'next/font/google'
 import Providers from '@/components/Providers'
 import './globals.css'
-import Footer from '@/components/footer'
-import Header from '@/components/Header'
+import Footer from '@/components/Footer'
 import { cn } from '@/lib/utils'
+import Header from '@/components/Header'
 
 const nunito = Nunito({
   variable: '--font-nunito-sans',

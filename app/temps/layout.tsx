@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import { Nunito } from 'next/font/google'
-import Footer from '@/components/footer'
+import Footer from '@/components/Footer'
 import Header from '@/components/Header'
 import { cn } from '@/lib/utils'
 

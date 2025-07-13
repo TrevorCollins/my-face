@@ -3,7 +3,7 @@ import React from 'react'
 const Details = () => {
   return (
     <section className='bio-box'>
-      <h2 className='title'>Trevor's Details</h2>
+      <h2 className='title'>Trevor&apos;s Details</h2>
       <div className='body card-grid'>
         <p>Status:</p>
         <p>placeholder text</p>

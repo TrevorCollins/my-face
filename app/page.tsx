@@ -4,10 +4,7 @@ import ContactMe from '@/components/ContactMe'
 import Details from '@/components/Details'
 import Hero from '@/components/Hero'
 import Interests from '@/components/Interests'
-import Intro from '@/components/intro'
-import NewsletterForm from '@/components/NewsLetterForm'
 import RecentPosts from '@/components/RecentPosts'
-import RecentProjects from '@/components/RecentProjects'
 
 export default function Home() {
   return (

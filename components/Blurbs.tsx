@@ -3,7 +3,7 @@ import React from 'react'
 const Blurbs = () => {
   return (
     <section className='social-box'>
-      <h2 className='title'>Trevor's Blurbs</h2>
+      <h2 className='title'>Trevor&apos;s Blurbs</h2>
       <div className='body'>
         <h3 className='sub-title'>About Me:</h3>
         <p>

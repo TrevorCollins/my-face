@@ -1,7 +1,7 @@
 const Interests = () => {
   return (
     <section className='bio-box'>
-      <h2 className='title'>Trevor's Interests</h2>
+      <h2 className='title'>Trevor&apos;s Interests</h2>
       <div className='body card-grid'>
         <p>General</p>
         <p>placeholder text</p>

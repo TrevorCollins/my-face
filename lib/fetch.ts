@@ -31,6 +31,7 @@ export const getFileBySlug = async (
     const { data, content } = matter(fileContent)
     return { metadata: { ...data, slug }, content }
   } catch (error) {
+    console.error(`Error fetching file by slug: ${slug}`, error)
     return null
   }
 }

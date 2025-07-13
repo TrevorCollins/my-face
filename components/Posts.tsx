@@ -1,7 +1,6 @@
 import Link from 'next/link'
 
 import { FileMetadata } from '@/lib/fetch'
-import { formatDate } from '@/lib/utils'
 
 export default function Posts({ posts }: { posts: FileMetadata[] }) {
   return (

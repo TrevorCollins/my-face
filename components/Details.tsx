@@ -1,10 +1,8 @@
-import React from 'react'
-
 const Details = () => {
   return (
     <section className='bio-box'>
-      <h2 className='title'>Trevor&apos;s Details</h2>
-      <div className='body card-grid'>
+      <h2 className='bio-title'>Trevor&apos;s Details</h2>
+      <div className='card-body card-grid'>
         <p>Status:</p>
         <p>placeholder text</p>
         <p>Here for:</p>

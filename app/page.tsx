@@ -5,6 +5,9 @@ import Details from '@/components/Details'
 import Hero from '@/components/Hero'
 import Interests from '@/components/Interests'
 import RecentPosts from '@/components/RecentPosts'
+import Skills from '@/components/Skills'
+import Song from '@/components/Song'
+import URL from '@/components/URL'
 
 export default function Home() {
   return (
@@ -13,6 +16,8 @@ export default function Home() {
         <div className='flex flex-2 flex-col gap-4'>
           <Hero />
           <ContactBox />
+          <URL />
+          <Song />
           <Interests />
           <Details />
         </div>
@@ -20,6 +25,7 @@ export default function Home() {
           <ContactMe />
           <RecentPosts />
           <Blurbs />
+          <Skills />
         </div>
       </div>
     </section>

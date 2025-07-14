@@ -1,8 +1,8 @@
 const Interests = () => {
   return (
     <section className='bio-box'>
-      <h2 className='title'>Trevor&apos;s Interests</h2>
-      <div className='body card-grid'>
+      <h2 className='bio-title'>Trevor&apos;s Interests</h2>
+      <div className='card-body card-grid'>
         <p>General</p>
         <p>placeholder text</p>
         <p>Music</p>
